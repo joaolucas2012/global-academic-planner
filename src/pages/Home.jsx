@@ -1,11 +1,11 @@
 import React from 'react'
 import { Centralizer } from '../components/Centralizer'
 
-export const Home = () => {
+export function Home() {
   return (
     <Centralizer>
-      <h3>Welcome!</h3>
-      <p>Please, navigate into the nav links to see all the different forms validated with Formik and Yup! I hope you enjoy this application!</p>
+      <h3>Bem vindo!</h3>
+      <p>O Global Academic Planner te oferece tudo que é necessário para te ajudar a organizar e aprimorar os cursos de sua instituição!</p>
     </Centralizer>
   )
 }

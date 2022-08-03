@@ -36,19 +36,6 @@ select {
   margin-top: 11px;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(250, 247, 247);
-  width: 60%;
-  height: 80%;
-  border-radius: 10px;
-  padding: 30px 15px;
-  margin: 15px 0;
-}
-
 .form-control {
   margin: 20px 0;
 }
