@@ -4,8 +4,18 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormikControl from '../components/FormComponents/FormikControl';
 import { Centralizer } from '../components/Centralizer';
+import { Button } from '../components/Button'
 
-export default function RegisterCourse() {
+export function RegisterCourse() {
+  const dropdownOptions = [
+    { key: 'Selecione um conceito', value: '' },
+    { key: '1', value: '1' },
+    { key: '2', value: '2' },
+    { key: '3', value: '3' },
+    { key: '4', value: '4' },
+    { key: '5', value: '5' },
+    { key: 'SC', value: 'SC' },
+  ]
   const initialValues = {
     course_name: '',
     course_code: '',
@@ -28,7 +38,7 @@ export default function RegisterCourse() {
     investment: Yup.string().required("Obrigatório"),
     course_coordinator: Yup.string().required("Obrigatório"),
     course_coordinator_curriculum: Yup.string().required("Obrigatório"),
-    course_coordinator_email: Yup.string().required("Obrigatório"),
+    course_coordinator_email: Yup.string().email("Formato de email inválido").required("Obrigatório"),
   })
   // const navigate = useNavigate()
   const onSubmit = values => {
@@ -62,10 +72,10 @@ export default function RegisterCourse() {
                 name='course_modality'
               />
               <FormikControl
-                control='input'
-                type='text'
+                control='select'
                 label='4.Conceito ENADE obtido na última avaliação:'
                 name='enade_concept'
+                options={dropdownOptions}
               />
               <FormikControl
                 control='input'
@@ -100,12 +110,12 @@ export default function RegisterCourse() {
               />
               <FormikControl
                 control='input'
-                type='text'
+                type='email'
                 label='10.E-mail do coordenador do curso'
                 name='course_coordinator_email'
               />
 
-              <button type='submit' className='button' disabled={!formik.isValid}>Avançar</button>
+              <Button disabled={!formik.isValid}>Cadastrar</Button>
             </Form>
           }
         }

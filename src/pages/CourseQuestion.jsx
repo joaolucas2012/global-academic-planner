@@ -4,8 +4,9 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormikControl from '../components/FormComponents/FormikControl';
 import { Centralizer } from '../components/Centralizer'
+import { Button } from '../components/Button'
 
-function CourseQuestion() {
+export function CourseQuestion() {
   const options = [
     { key: 'Sim', value: 'yesmoc' },
     { key: 'Não', value: 'notmoc' },
@@ -35,7 +36,7 @@ function CourseQuestion() {
                 name='course_question'
                 options={options}
               />
-              <button type='submit' className='button' disabled={!formik.isValid}>Avançar</button>
+              <Button disabled={!formik.isValid}>Avançar</Button>
             </Form>
           }
         }
@@ -43,5 +44,3 @@ function CourseQuestion() {
     </Centralizer>
   )
 }
-
-export default CourseQuestion

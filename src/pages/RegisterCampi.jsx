@@ -4,6 +4,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormikControl from '../components/FormComponents/FormikControl';
 import { Centralizer } from '../components/Centralizer';
+import { Button } from '../components/Button';
 
 export function RegisterCampi() {
   const options = [
@@ -115,7 +116,7 @@ export function RegisterCampi() {
                 options={options}
               />
 
-              <button type='submit' className='button' disabled={!formik.isValid}>Avançar</button>
+              <Button disabled={!formik.isValid}>Avançar</Button>
             </Form>
           }
         }

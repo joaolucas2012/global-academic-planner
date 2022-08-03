@@ -11,7 +11,9 @@ export const Navbar = () => {
   }
   return (
     <FixedNav>
-      <NavLink style={navLinkStyles} to='/register'>Cadastrar-se</NavLink>
+      <NavLink style={navLinkStyles} to='/'>Início</NavLink>
+      <NavLink style={navLinkStyles} to='/registerinstitution'>Cadastrar-se</NavLink>
+      <NavLink style={navLinkStyles} to='/yearinfo'>Informações anuais</NavLink>
     </FixedNav>
   )
 }
