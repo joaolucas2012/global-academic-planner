@@ -39,7 +39,7 @@ export function RegisterCampi() {
   const navigate = useNavigate()
   const onSubmit = values => {
     console.log('Form data', values)
-    values.campi_campi === 'yesmoc' ? navigate('/registercampi') : navigate('/registercourse')
+    values.campi_campi === 'yesmoc' ? navigate('/registercampi') : navigate('/coursequestion')
   }
 
   return (
