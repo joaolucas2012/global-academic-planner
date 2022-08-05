@@ -2,12 +2,13 @@ import React from 'react'
 import DateView from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Field, ErrorMessage } from 'formik'
-import TextError from './TextError'
+import TextError from '../TextError'
+import { FormControlContainer } from '../FormControlContainer'
 
 function DatePicker(props) {
   const { label, name, ...rest } = props
   return (
-    <div className='form-control'>
+    <FormControlContainer>
       <label htmlFor={name}>{label}</label>
       <Field name={name}>
         {({ form, field }) => {
@@ -25,7 +26,7 @@ function DatePicker(props) {
         }}
       </Field>
       <ErrorMessage name={name} component={TextError} />
-    </div>
+    </FormControlContainer>
   )
 }
 

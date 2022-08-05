@@ -1,11 +1,12 @@
 import React from 'react'
+import { FormControlContainer } from '../FormControlContainer'
 
 function Label(props) {
   const { label, name } = props
   return (
-    <div className='form-control'>
+    <FormControlContainer>
       <label htmlFor={name}>{label}</label>
-    </div>
+    </FormControlContainer>
   )
 }
 

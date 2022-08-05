@@ -1,11 +1,3 @@
-.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: rgb(23, 28, 26);
-}
-
 label {
   font-weight: bold;
   display: flex;
@@ -34,24 +26,6 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 11px;
-}
-
-.form-control {
-  margin: 20px 0;
-}
-
-.error {
-  color: red;
-}
-
-.button {
-  width: 80px;
-  height: 30px;
-  background-color: rgb(27, 168, 126);
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
 }
 
 .button:hover {
