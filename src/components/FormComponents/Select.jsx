@@ -1,11 +1,12 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
-import TextError from './TextError'
+import TextError from '../TextError'
+import { FormControlContainer } from '../FormControlContainer'
 
 function Select(props) {
   const { label, name, options, ...rest } = props
   return (
-    <div className='form-control'>
+    <FormControlContainer>
       <label htmlFor={name}>{label}</label>
       <Field as='select' id={name} name={name} {...rest} >
         {
@@ -17,7 +18,7 @@ function Select(props) {
         }
       </Field>
       <ErrorMessage name={name} component={TextError} />
-    </div>
+    </FormControlContainer>
   )
 }
 

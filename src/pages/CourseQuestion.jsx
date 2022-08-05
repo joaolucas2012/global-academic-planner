@@ -1,8 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
-import FormikControl from '../components/FormComponents/FormikControl';
+import { Formik, Form } from 'formik'
+import * as Yup from 'yup'
+import FormikControl from '../components/FormComponents/FormikControl'
 import { Centralizer } from '../components/Centralizer'
 import { Button } from '../components/Button'
 

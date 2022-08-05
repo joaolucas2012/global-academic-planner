@@ -1,12 +1,12 @@
 import React from 'react'
-import { CenterDiv } from './styles'
+import { CenterDiv, AppContainer } from './styles'
 
 export const Centralizer = (props) => {
   return (
-    <div className="App">
-      <CenterDiv className="center">
+    <AppContainer>
+      <CenterDiv>
         {props.children}
       </CenterDiv>
-    </div>
+    </AppContainer>
   )
 }

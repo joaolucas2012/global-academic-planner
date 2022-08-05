@@ -1,11 +1,12 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
-import TextError from './TextError'
+import TextError from '../TextError'
+import { FormControlContainer } from '../FormControlContainer'
 
 function RadioButtons(props) {
   const { label, name, options, ...rest } = props
   return (
-    <div className='form-control'>
+    <FormControlContainer>
       <label>{label}</label>
       <Field name={name} >
         {({ field }) => {
@@ -27,7 +28,7 @@ function RadioButtons(props) {
         }}
       </Field>
       <ErrorMessage component={TextError} name={name} />
-    </div>
+    </FormControlContainer>
   )
 }
 

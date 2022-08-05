@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, Outlet } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import FormikControl from '../components/FormComponents/FormikControl';
@@ -45,87 +45,84 @@ export function RegisterInstitution() {
     values.institution_campi === 'yesmoc' ? navigate('/registercampi') : navigate('/registerCourse')
   }
   return (
-    <>
-      <Centralizer>
-        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-          {
-            formik => {
-              return <Form>
-                <h3>Formulário de cadastro da Instituição</h3>
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='1. Código da instituição (MEC)'
-                  name='institution_code'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='2. Nome da Instituição de Ensino Superior (por extenso e sigla)'
-                  name='institution_name'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='3. Nome do dirigente da Instituição'
-                  name='institution_director_name'
-                />
-                <FormikControl
-                  control='label'
-                  label='4. Endereço da sede da Instituição'
-                  name='institution_address'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='Rua/Avenida'
-                  name='institution_address.street'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='Bairro'
-                  name='institution_address.neighborhood'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='Cidade'
-                  name='institution_address.city'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='Estado'
-                  name='institution_address.state'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='País'
-                  name='institution_address.country'
-                />
-                <FormikControl
-                  control='input'
-                  type='text'
-                  label='CEP'
-                  name='institution_address.cep'
-                />
+    <Centralizer>
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+        {
+          formik => {
+            return <Form>
+              <h3>Formulário de cadastro da Instituição</h3>
+              <FormikControl
+                control='input'
+                type='text'
+                label='1. Código da instituição (MEC)'
+                name='institution_code'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='2. Nome da Instituição de Ensino Superior (por extenso e sigla)'
+                name='institution_name'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='3. Nome do dirigente da Instituição'
+                name='institution_director_name'
+              />
+              <FormikControl
+                control='label'
+                label='4. Endereço da sede da Instituição'
+                name='institution_address'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='Rua/Avenida'
+                name='institution_address.street'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='Bairro'
+                name='institution_address.neighborhood'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='Cidade'
+                name='institution_address.city'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='Estado'
+                name='institution_address.state'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='País'
+                name='institution_address.country'
+              />
+              <FormikControl
+                control='input'
+                type='text'
+                label='CEP'
+                name='institution_address.cep'
+              />
 
-                <FormikControl
-                  control='radio'
-                  label='5. A instituição tem Campi?'
-                  name='institution_campi'
-                  options={options}
-                />
+              <FormikControl
+                control='radio'
+                label='5. A instituição tem Campi?'
+                name='institution_campi'
+                options={options}
+              />
 
-                <Button disabled={!formik.isValid}>Avançar</Button>
-              </Form>
-            }
+              <Button disabled={!formik.isValid}>Avançar</Button>
+            </Form>
           }
-        </Formik>
-      </Centralizer>
-      <Outlet />
-    </>
+        }
+      </Formik>
+    </Centralizer>
   )
 }
