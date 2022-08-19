@@ -1,7 +1,8 @@
 import React from 'react'
+import { ErrorDiv } from './styles'
 
 export default function TextError(props) {
   return (
-    <div className="error">{props.children}</div>
+    <ErrorDiv>{props.children}</ErrorDiv>
   )
 }
