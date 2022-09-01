@@ -3,6 +3,8 @@ const express = require("express");
 // import mongoose
 const mongoose = require("mongoose");
 require("dotenv").config();
+// import routes
+const useRoutes = require("./routes/user");
 
 // app
 const app = express();
@@ -20,10 +22,8 @@ mongoose.connection.on("error", (err) => {
   console.log(`DB connection error: ${err.message}`);
 });
 
-// routes
-app.get("/", (req, res) => {
-  res.send("Project inicialized");
-});
+// routes middleware
+app.use("/api", useRoutes);
 
 const port = process.env.PORT || 8000;
 
