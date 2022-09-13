@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Project inicialized!");
-});
+const { welcome } = require("../controllers/user");
+
+router.get("/", welcome);
 
 module.exports = router;
